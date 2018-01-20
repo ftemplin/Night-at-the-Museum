@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 namespace PrimitivePlus
 {
@@ -375,8 +376,8 @@ namespace PrimitivePlus
 			mesh.uv = uv;
 			mesh.triangles = triangles;
 			mesh.RecalculateBounds();
-			mesh.Optimize();
-			return mesh;
+            MeshUtility.Optimize(mesh);
+            return mesh;
 		}
 	}
 }
